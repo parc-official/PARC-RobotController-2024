@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.Range;
 
+import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
@@ -39,7 +40,7 @@ public class MecanumDrive {
     BNO055IMU imu;
     Orientation orientation;
 
-    public MecanumDrive(Gamepad gamepad1, DcMotor LFD, DcMotor LBD, DcMotor RFD, DcMotor RBD, BNO055IMU imu, HardwareMap hardwareMap) {
+    public MecanumDrive(Gamepad gamepad1, DcMotor LFD, DcMotor LBD, DcMotor RFD, DcMotor RBD, BNO055IMU imu, HardwareMap hardwareMap, Telemetry telemetry) {
         //setting inputs
         this.LFD = LFD;
         this.LBD = LBD;
@@ -61,7 +62,7 @@ public class MecanumDrive {
         LBD.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         RBD.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
-    public MecanumDrive(DcMotor LFD, DcMotor LBD, DcMotor RFD, DcMotor RBD, BNO055IMU imu, HardwareMap hardwareMap) {
+    public MecanumDrive(DcMotor LFD, DcMotor LBD, DcMotor RFD, DcMotor RBD, BNO055IMU imu, HardwareMap hardwareMap, Telemetry telemetry) {
         //setting inputs
         this.LFD = LFD;
         this.LBD = LBD;

@@ -13,13 +13,9 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 public class TeleOpMode extends LinearOpMode {
 
     Robot robot;
-    public void init(Gamepad gamepad1, Gamepad gamepad2, HardwareMap hardwareMap) {
-        robot = new Robot(gamepad1, hardwareMap.get(DcMotor.class, "LFD"), hardwareMap.get(DcMotor.class, "LBD"), hardwareMap.get(DcMotor.class, "RFD"), hardwareMap.get(DcMotor.class, "RBD"), hardwareMap.get(DcMotor.class, "spinner"), new DcMotor[] {hardwareMap.get(DcMotor.class, "liftl"), hardwareMap.get(DcMotor.class, "liftr")}, hardwareMap.get(Servo.class, "drop"), hardwareMap.get(BNO055IMU.class, "imu"), hardwareMap);
-        telemetry.setMsTransmissionInterval(250);
-    }
 
     public void runOpMode() {
-        robot = new Robot(gamepad1, hardwareMap.get(DcMotor.class, "LFD"), hardwareMap.get(DcMotor.class, "LBD"), hardwareMap.get(DcMotor.class, "RFD"), hardwareMap.get(DcMotor.class, "RBD"), hardwareMap.get(DcMotor.class, "spinner"), new DcMotor[] {hardwareMap.get(DcMotor.class, "liftl"), hardwareMap.get(DcMotor.class, "liftr")}, hardwareMap.get(Servo.class, "drop"), hardwareMap.get(BNO055IMU.class, "imu"), hardwareMap);
+        robot = new Robot(gamepad1, gamepad2, hardwareMap.get(DcMotor.class, "LFD"), hardwareMap.get(DcMotor.class, "LBD"), hardwareMap.get(DcMotor.class, "RFD"), hardwareMap.get(DcMotor.class, "RBD"), hardwareMap.get(Servo.class, "slide"), hardwareMap.get(Servo.class, "claw"), hardwareMap.get(BNO055IMU.class, "imu"), hardwareMap, telemetry);
         waitForStart();
         if (opModeIsActive()) {
             while (opModeIsActive()) {
