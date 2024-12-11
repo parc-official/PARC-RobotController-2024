@@ -241,6 +241,8 @@ public final class RRMecanumDrive {
 
         FlightRecorder.write("MECANUM_PARAMS", PARAMS);
     }
+    
+
 
     public void setDrivePowers(PoseVelocity2d powers) {
         MecanumKinematics.WheelVelocities<Time> wheelVels = new MecanumKinematics(1).inverse(
@@ -255,6 +257,14 @@ public final class RRMecanumDrive {
         leftBack.setPower(wheelVels.leftBack.get(0) / maxPowerMag);
         rightBack.setPower(wheelVels.rightBack.get(0) / maxPowerMag);
         rightFront.setPower(wheelVels.rightFront.get(0) / maxPowerMag);
+    }
+
+    public Action turn(double angle){
+
+    }
+
+    public Action straight(int dist){
+
     }
 
     public final class FollowTrajectoryAction implements Action {
